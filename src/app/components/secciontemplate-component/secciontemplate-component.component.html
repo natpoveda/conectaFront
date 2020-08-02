@@ -1,0 +1,35 @@
+<div class="parallax-container">
+  <div class="parallax">
+    <img src={{seccionesEncontradas.urlImagen}}>
+    <div class="texto">
+      <h2>{{seccionesEncontradas.nombre}}</h2>
+    </div>
+  </div>
+</div>
+
+<div  class="seccion-template container">
+   <div class="descripcion">
+     <p>
+      {{seccionesEncontradas.descripcion}}
+     </p>
+   </div>  
+   <div class="proyectos">
+      <div class="row">
+        <div class="col s6" *ngFor="let proyecto of proyectosEncontrados">
+            <div class="card">
+              <div class="card-image">
+                <img src="{{proyecto.urlImage}}">
+                <span class="card-title">{{proyecto.titulo}}</span>
+              </div>
+              <div class="card-content">
+                <p> {{proyecto.descripcion | slice:0:40 }} ...</p>
+              </div>
+              <div class="card-action">
+                <a routerLink="/proyecto/{{proyecto._id}}">Más Información</a>
+              </div>
+            </div>
+        </div>  
+      </div>
+   </div>
+
+</div>

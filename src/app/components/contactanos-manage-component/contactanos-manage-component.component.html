@@ -1,0 +1,28 @@
+<div class="container search">
+    
+    <div>
+
+        <table>
+            <tr>
+              <th>Nombre</th>
+              <th>Fecha</th>
+              <th>Email</th>
+              <th>Asunto</th>
+              <th>Eliminar</th>
+             
+            </tr>
+                <tr *ngFor="let contactanos of contactanosEncontrados">
+                    <td>{{contactanos.nombre}}</td>
+                    <td>{{contactanos.fecha}}</td>
+                    <td>{{contactanos.email}}</td>
+                    <td>{{contactanos.asunto}}</td>                   
+                    <td class="task"> 
+                        <a class="btn-floating btn-large waves-effect waves-light red" routerLink="/delete-contactanos/{{contactanos._id}}"><i class="material-icons">delete</i></a>
+                    </td>
+                </tr>
+             
+          </table>
+        
+
+    </div>
+</div>

@@ -1,0 +1,37 @@
+<div class="container search">
+    <label> Para buscar un usuario ingresa el nombre, para ver todos ingresa * </label>
+    <input  (keyup)="searchUser($event);"  class="form-control"> 
+  
+    <div>
+
+        <table>
+            <tr>
+              <th>Nombre</th>
+              <th>Apellido</th>
+              <th>Genero</th>
+              <th>Cedula</th>
+              <th>Email</th>
+              <th>Tel</th>
+              <th>Pais</th>
+              <th class="task">Actualizar</th>            
+            </tr>
+
+                <tr *ngFor="let usuario of usuariosEncontrados">
+                    <td>{{usuario.nombre}}</td>
+                    <td>{{usuario.apellido}}</td>
+                    <td>{{usuario.genero}}</td>                   
+                    <td>{{usuario.cedula}}</td>                   
+                    <td>{{usuario.email}}</td>    
+                    <td>{{usuario.tel}}</td>     
+                    <td>{{usuario.pais}}</td>                                                
+                   
+                    <td class="task"> 
+                        <a class="btn-floating btn-large waves-effect waves-light yellow" routerLink="/user/{{usuario._id}}"><i class="material-icons">info</i></a>
+                    </td>
+                </tr>
+             
+          </table>
+        
+
+    </div>
+</div>

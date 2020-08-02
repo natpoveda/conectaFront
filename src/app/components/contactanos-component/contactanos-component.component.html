@@ -1,0 +1,21 @@
+<div class="proyecto-component container">
+    <form #crearContactanosForm="ngForm" (ngSubmit)="crearContactanos()">
+
+        <input type="text" id="email" placeholder="email" required
+        #email="ngModel" name="email" [(ngModel)] ="contactenosRegistrado.email">
+        <label>E-mail</label>
+        <br>
+        <input type="text" id="nombre" placeholder="nombre" required
+        #nombre="ngModel" name="nombre" [(ngModel)] ="contactenosRegistrado.nombre">
+        <label>Nombre</label>
+        <br>
+        <input type="text" id="asunto" placeholder="asunto" required
+        #asunto="ngModel" name="asunto" [(ngModel)] ="contactenosRegistrado.asunto">
+        <label>Asunto</label>
+        <br>
+        <br>
+        <button class="btn waves-effect waves-light" type="submit" name="action">Enviar
+            <i class="material-icons right">send</i>
+        </button>
+    </form>
+</div>

@@ -1,0 +1,35 @@
+<div class="seccion-component container">
+    <form #crearSeccionForm="ngForm" (ngSubmit)="crearSeccion()">
+
+        <div class="row">
+          <div class="input-field col s12">
+            <input placeholder="URL" id="urlImagen" type="text" class="validate"
+            #urlImagen="ngModel" name="urlImagen" [(ngModel)]="seccionRegistrada.urlImagen" >
+            <label for="urlImagen"> URL Imagen </label>
+          </div>
+        </div>   
+
+        <div class="row">
+            <div class="input-field col s12">
+              <input placeholder="Nombre de Sección" id="nombre" type="text" class="validate"
+              #nombre="ngModel" name="nombre" [(ngModel)]="seccionRegistrada.nombre" >
+              <label for="nombre"> Nombre de Sección </label>
+            </div>
+        </div>   
+
+        <div class="row">
+            <div class="input-field col s12">
+                <div class="input-field col s12">
+                    <textarea id="descripcion" class="materialize-textarea" data-length="120"
+                    #descripcion="ngModel" name="descripcion" [(ngModel)]="seccionRegistrada.descripcion"
+                    ></textarea>
+                    <label for="descripcion">Descripción</label>
+                  </div>
+            </div>
+        </div>   
+       
+        <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+          <i class="material-icons right">send</i>
+        </button>
+    </form>
+</div>       

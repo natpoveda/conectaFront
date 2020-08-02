@@ -1,0 +1,46 @@
+<div class="proyectobid-component container">
+    <div class="col s8" *ngFor="let proyecto of proyectosEncontrados">
+        <div class="proyecto-template">
+            <div class="col s6 titulo">
+                <h1>{{proyecto.titulo}}</h1>
+                <h5>Fecha: <span>{{proyecto.fecha | date: 'dd/MM/yyyy'}}</span></h5>
+            </div>
+            <div class="col s6 image">
+                <img class="materialboxed"  src="{{proyecto.urlImage}}">
+            </div>
+            <div class="col s6 description">
+                <p>{{proyecto.descripcion}}</p>
+            </div>
+        </div>    
+            <div class="col s6 video">
+                <div class="video-container">
+                   
+                    <youtube-player 
+                    videoId="{{proyecto.urlVideo}}" 
+                    suggestedQuality="highres"
+                    [height]="250" 
+                    [width]="500" 
+                    [startSeconds]="0"
+                    [endSeconds]="">
+                    </youtube-player>
+    
+                  </div>
+            </div>
+        
+        <div class="recursos">
+            <div class="col s3 tiempo">
+                <div *ngIf='proyecto.tiempo'>
+                    <a class="waves-effect waves-light btn-large" routerLink="/register/{{proyecto._id}}"><i class="material-icons right">loyalty</i>Dona Tiempo</a>
+                </div> 
+            </div>
+    
+            <div class="col s3 dinero">
+                <div *ngIf='proyecto.donacion'>
+                    <a class="waves-effect waves-light btn-large" routerLink="/donacion/{{proyecto._id}}"><i class="material-icons right">monetization_on</i>Dona Recursos</a>
+                </div> 
+            </div>
+        </div>
+
+    </div>    
+</div>
+

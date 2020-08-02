@@ -1,0 +1,42 @@
+<div class="container search">
+    <label> Para buscar un proyecto ingresa el título, para ver todos ingresa * </label>
+    <input  (keyup)="searchProyecto($event);"  class="form-control"> 
+  
+    <div>
+
+        <table>
+            <tr>
+              <th>Título</th>
+              <th>Fecha</th>
+              <th>Tiempo</th>
+              <th>Donación</th>
+              <th class="task">Eliminar</th>
+              <th class="task">Actualizar</th>
+              <th class="task">Reportes de Donaciones</th>
+              <th class="task">Reportes de Usuarios</th>
+             
+            </tr>
+                <tr *ngFor="let proyecto of proyectosEncontrados">
+                    <td>{{proyecto.titulo}}</td>
+                    <td>{{proyecto.fecha | date: 'dd/MM/yyyy'}}</td>
+                    <td>{{proyecto.tiempo}}</td>
+                    <td>{{proyecto.donacion}}</td>                   
+                    <td class="task"> 
+                        <a class="btn-floating btn-large waves-effect waves-light red" routerLink="/delete-proyecto/{{proyecto._id}}"><i class="material-icons">delete</i></a>
+                    </td>
+                    <td class="task"> 
+                        <a class="btn-floating btn-large waves-effect waves-light green" routerLink="/update-proyecto/{{proyecto._id}}"><i class="material-icons">add</i></a>
+                    </td>
+                    <td class="task"> 
+                        <a class="btn-floating btn-large waves-effect waves-light blue" routerLink="/reportes-donaciones/{{proyecto._id}}"><i class="material-icons">info</i></a>
+                    </td>
+                    <td class="task"> 
+                        <a class="btn-floating btn-large waves-effect waves-light yellow" routerLink="/reportes/{{proyecto._id}}"><i class="material-icons">info</i></a>
+                    </td>
+                </tr>
+             
+          </table>
+        
+
+    </div>
+</div>

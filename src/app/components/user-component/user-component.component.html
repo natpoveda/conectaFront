@@ -1,0 +1,43 @@
+<div class="user-component container">
+    <form #crearTareasForm="ngForm" (ngSubmit)="crearUsuario()">
+        <input type="text" id="nombre" placeholder="nombre" required
+        #nombre="ngModel" name="nombre" [(ngModel)] ="usuariosRegistrado.nombre">
+        <br>
+        <input type="text" id="apellido" placeholder="apellido" required
+        #apellido="ngModel" name="apellido" [(ngModel)] ="usuariosRegistrado.apellido">
+        <br>
+        <div class="input-field col s6"> 
+            <select id="genero"  name="genero" #genero="ngModel" [(ngModel)] ="usuariosRegistrado.genero">
+                <option value="Femenino">Femenino</option>
+                <option value="Masculino">Masculino</option>
+            </select>
+            <label>Género</label>
+        </div>
+        <br>
+        <input type="text" id="cedula" placeholder="cedula" required
+        #cedula="ngModel" name="cedula" [(ngModel)] ="usuariosRegistrado.cedula">
+        <br>
+        <input type="text" id="edad" placeholder="edad" required
+        #edad="ngModel" name="edad" [(ngModel)] ="usuariosRegistrado.edad">
+        <br>
+        <input type="text" id="direccion" placeholder="direccion" required
+        #direccion="ngModel" name="direccion" [(ngModel)] ="usuariosRegistrado.direccion">
+        <br>
+        <input type="text" id="email" placeholder="email" required
+        #email="ngModel" name="email" [(ngModel)] ="usuariosRegistrado.email">
+        <br>
+        <input type="text" id="tel" placeholder="tel" required
+        #tel="ngModel" name="tel" [(ngModel)] ="usuariosRegistrado.tel">
+        <br>
+        <input type="text" id="pais" placeholder="pais" required
+        #pais="ngModel" name="pais" [(ngModel)] ="usuariosRegistrado.pais">
+        <br>
+        <input type="text" id="pid" placeholder="{{proyectoId}}" 
+        #pid="ngModel" name="pid"   [(ngModel)] ="proyectoId" [disabled]="true">
+        <br>
+        <br>
+        <button class="btn waves-effect waves-light" type="submit" name="action">Enviar
+            <i class="material-icons right">send</i>
+        </button>
+    </form>
+</div>

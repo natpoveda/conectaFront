@@ -1,0 +1,54 @@
+<div class="proyecto-component container">
+    <form #crearProyectosForm="ngForm" (ngSubmit)="crearProyecto()">
+
+        <input type="text" id="titulo" placeholder="titulo" required
+        #titulo="ngModel" name="titulo" [(ngModel)] ="proyectoRegistrado.titulo">
+        <label>Título</label>
+        <br>
+        <input type="text" id="descripcion" placeholder="descripcion" required
+        #descripcion="ngModel" name="descripcion" [(ngModel)] ="proyectoRegistrado.descripcion">
+        <label>Descripción</label>
+        <br>
+        <input type="text" id="urlImage" placeholder="urlImage" required
+        #urlImage="ngModel" name="urlImage" [(ngModel)] ="proyectoRegistrado.urlImage">
+        <label>URL de Imagen</label>
+        <br>
+        <input type="text" id="urlVideo" placeholder="urlVideo" required
+        #urlVideo="ngModel" name="urlVideo" [(ngModel)] ="proyectoRegistrado.urlVideo">
+        <label>Id de video de Youtube</label>
+        <br>
+        <br>
+        <div class="input-field col s6"> 
+            <select id="tiempo"  name="tiempo" #tiempo="ngModel" [(ngModel)] ="proyectoRegistrado.tiempo">
+                <option value="true"> Tiene Donacion de Tiempo</option>
+                <option value="false"> No Tiene Donacion de Tiempo</option>
+            </select>
+            <label>Donación de Tiempo?</label>
+        </div>
+        <br>
+
+        <div class="input-field col s6"> 
+            <select id="donacion"  name="donacion" #donacion="ngModel" [(ngModel)] ="proyectoRegistrado.donacion">
+                <option value="true"> Tiene Donacion de Dinero</option>
+                <option value="false"> No Tiene Donacion de Dinero</option>
+            </select>
+            <label>Donación de dinero?</label>
+        </div>
+        <br>
+
+        <div class="input-field col s6"> 
+            <select id="seccion"  name="seccion" #seccion="ngModel" [(ngModel)] ="proyectoRegistrado.seccion">
+                <option value="5ef9772972c9c617a48295af">Colombia</option>
+                <option value="5ef9774472c9c617a48295b0">Europa</option>
+                <option value="5f0670758ecdb3457ce01126">Centro América</option>
+                <option value="5f14fb4619fe6d370c5f62e1">Rio Amazonas</option>
+            </select>
+            <label>Sección</label>
+        </div>
+
+        <br>
+        <button class="btn waves-effect waves-light" type="submit" name="action">Enviar
+            <i class="material-icons right">send</i>
+        </button>
+    </form>
+</div>

@@ -1,0 +1,29 @@
+<div class="container search">
+    <label> Para buscar un usuario ingresa el nombre, para ver todos ingresa * </label>
+    <input  (keyup)="searchSeccion($event);"  class="form-control"> 
+  
+    <div>
+
+        <table>
+            <tr>
+              <th>Nombre</th>
+              <th>Descripción</th>
+              <th class="task">Imagen</th>
+              <th class="task">Actualizar</th>            
+            </tr>
+
+                <tr *ngFor="let seccion of seccionesEncontradas">
+                    <td>{{seccion.nombre}}</td>
+                    <td class="task">{{seccion.descripcion | slice:0:50}} ...</td>
+                    <td class="thumb task"><img src={{seccion.urlImagen}}></td>                   
+                   
+                    <td class="task"> 
+                        <a class="btn-floating btn-large waves-effect waves-light yellow" routerLink="/update-seccion/{{seccion._id}}"><i class="material-icons">border_color</i></a>
+                    </td>
+                </tr>
+             
+          </table>
+        
+
+    </div>
+</div>

@@ -1,0 +1,26 @@
+<table>
+    <tr>
+      <th>Nombre</th>
+      <th>Apellido</th>
+      <th>Genero</th>
+      <th>Cédula</th>
+      <th>Edad</th>
+      <th>Dirección</th>
+      <th>E-mail</th>
+      <th>Tel</th>
+      <th>País</th>
+    </tr>
+        <tr *ngFor="let usuario of usuariosEncontrados">
+            <td>{{usuario.nombre}}</td>
+            <td>{{usuario.apellido}}</td>
+            <td>{{usuario.genero}}</td>
+            <td>{{usuario.cedula}}</td>
+            <td>{{usuario.edad}}</td>
+            <td>{{usuario.direccion}}</td>
+            <td>{{usuario.email}}</td>
+            <td>{{usuario.tel}}</td>
+            <td>{{usuario.pais}}</td>
+        </tr>
+     
+  </table>
+  

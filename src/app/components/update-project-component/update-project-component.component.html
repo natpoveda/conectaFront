@@ -1,0 +1,33 @@
+<div *ngFor="let proyecto of proyectosEncontrados" class="proyecto container">
+    <form #actualizarProyectoForm="ngForm">    
+
+        <input type="text" id="titulo" placeholder="titulo" required
+        #titulo="ngModel" name="titulo" [(ngModel)] ="proyecto.titulo">
+        <br>
+        <input type="text" id="descripcion" placeholder="descripcion" required
+        #descripcion="ngModel" name="descripcion" [(ngModel)] ="proyecto.descripcion">
+        <br>
+        <input type="text" id="urlImage" placeholder="urlImage" required
+        #urlImage="ngModel" name="urlImage" [(ngModel)] ="proyecto.urlImage">
+        <br>
+        <input type="text" id="urlVideo" placeholder="urlVideo" required
+        #urlVideo="ngModel" name="urlVideo" [(ngModel)] ="proyecto.urlVideo">
+        <br>
+        <input type="text" id="tiempo" placeholder="tiempo" required
+        #tiempo="ngModel" name="tiempo" [(ngModel)] ="proyecto.tiempo">
+        <br>
+        <input type="text" id="donacion" placeholder="donacion" required
+        #donacion="ngModel" name="donacion" [(ngModel)] ="proyecto.donacion">
+        <br>
+        <input type="text" id="seccion" placeholder="seccion" required
+        #seccion="ngModel" name="seccion" [(ngModel)] ="proyecto.seccion">
+        <br>
+        
+    
+        <button class="btn waves-effect waves-light" type="submit" name="action" (click)='actualizarProyectobyId(proyecto)'> Actualizar
+            <i class="material-icons right">send</i>
+        </button>
+        
+       
+    </form>
+</div>

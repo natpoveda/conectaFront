@@ -1,0 +1,26 @@
+<div  class="seccion-template container">
+      <div class="proyectos" *ngFor="let proyectos of proyectosEncontrados">
+        <div class="row">
+          <div class="secciones">
+            <h2>{{proyectos.seccion}}</h2>
+          </div>
+          <div class="col s6" *ngFor="let proyecto of proyectos.proyecto">
+          
+                <div class="card">    
+                  <div class="card-image">
+                    <img src="{{proyecto.urlImage}}">
+                    <span class="card-title">{{proyecto.titulo}}</span>
+                  </div>  
+                  <div class="card-content">
+                    <p> {{proyecto.descripcion | slice:0:40}} ... </p>
+                  </div>
+                  <div class="card-action">
+                    <a routerLink="/proyecto/{{proyecto._id}}">Más Información</a> 
+                  </div>
+                </div>
+
+          </div>    
+        </div>  
+    </div>
+
+</div>

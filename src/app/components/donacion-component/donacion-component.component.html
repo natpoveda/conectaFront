@@ -1,0 +1,103 @@
+<div class="donacion-component container">
+    <form #crearDonacionesForm="ngForm" (ngSubmit)="crearDonacion()" >
+
+        <div class="row">
+            <div class="input-field col s6">
+                <input type="text" id="nombre"  required
+                #nombre="ngModel" name="nombre" [(ngModel)] ="donacionRegistrada.nombre">
+                <label for="nombre">Nombre</label>
+                <br>        
+            </div>
+            <div class="input-field col s6">
+                <input type="text" id="apellido"  required
+                #apellido="ngModel" name="apellido" [(ngModel)] ="donacionRegistrada.apellido">
+                <label for="apellido">Apellido</label>
+                <br>         
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field col s6">
+                <input type="text" id="cedula"  required
+                #cedula="ngModel" name="cedula" [(ngModel)] ="donacionRegistrada.cedula">
+                <label for="cedula">Cédula</label>
+                <br>       
+            </div>
+            <div class="input-field col s6">
+                <div class="input-field col s6"> 
+                    <select id="genero"  name="genero" #genero="ngModel" [(ngModel)] ="donacionRegistrada.genero">
+                        <option value="Femenino">Femenino</option>
+                        <option value="Masculino">Masculino</option>
+                    </select>
+                    <label>Género</label>
+                </div>
+                <br>                  
+            </div>
+        </div>
+        
+
+        <div class="row">
+            <div class="input-field col s6">
+                <input type="text" id="edad" required
+                #edad="ngModel" name="edad" [(ngModel)] ="donacionRegistrada.edad">
+                <label for="edad">Edad</label>
+                <br> 
+            </div>
+            <div class="input-field col s6">
+                <input type="text" id="direccion"  required
+                #direccion="ngModel" name="direccion" [(ngModel)] ="donacionRegistrada.direccion">
+                <label for="direccion">Direccion</label>
+                <br>       
+            </div>
+        </div>
+
+        
+        <div class="row">
+            <div class="input-field col s6">
+                <input type="text" id="pais" required
+                #pais="ngModel" name="pais" [(ngModel)] ="donacionRegistrada.pais">
+                <label for="pais">Pais</label>
+                <br>
+            </div>
+            <div class="input-field col s6">
+                <input type="text" id="email" required
+                #email="ngModel" name="email" [(ngModel)] ="donacionRegistrada.email">
+                <label for="email">e-mail</label>
+                <br>        
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field col s6">
+                <input type="text" id="pid" required
+                #pid="ngModel" name="pid" [(ngModel)] ="proyectoId" placeholder="{{proyectoId}}" [disabled]="true">
+                <label for="pid">pid</label>
+                <br> 
+            </div>
+            <div class="input-field col s6">
+                <input type="text" id="monto" required
+                #monto="ngModel" name="monto" [(ngModel)] ="donacionRegistrada.monto">
+                <label for="monto">Monto</label>
+                <br>       
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="input-field col s12">
+                <div class="input-field col s6"> 
+                    <select id="tipoPago"  name="tipoPago" #tipoPago="ngModel" [(ngModel)] ="donacionRegistrada.tipoPago" required>
+                        <option value="Tarjeta de Crédito">Tarjeta</option>
+                        <option value="PSE">PSE</option>
+                        <option value="Efectivo">Efectivo</option>
+                    </select>
+                    <label>Tipo de Pago</label>
+                </div>
+                <br>        
+            </div>
+        </div>
+
+        <button class="btn waves-effect waves-light" type="submit" name="action">Enviar
+            <i class="material-icons right">submit</i>
+        </button>
+    </form>
+</div>

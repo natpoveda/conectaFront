@@ -1,0 +1,48 @@
+<nav class="navbar-fixed">
+  <div class="nav-wrapper">
+    <a href="/" class="brand-logo"><img src="/assets/logomobile_letra.jpg"></a>
+    <a routerLink="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li><a href="/seccion/5ef9772972c9c617a48295af">Colombia</a></li>
+      <li><a href="/seccion/5f14fb4619fe6d370c5f62e1">Amazonas</a></li>
+      <li><a href="/seccion/5f0670758ecdb3457ce01126">Centro América</a></li>
+      <li><a href="/seccion/5ef9774472c9c617a48295b0">Europa</a></li>
+      <li><a href="/contactanos">Contactenos</a></li>
+      <li *ngIf="adminLogged != 'true'"><a routerLink="/login">Login</a></li>
+      <li *ngIf="adminLogged == 'true'"><a routerLink="/logout">Cerrar Sesión</a></li>
+    </ul>
+  </div>
+</nav>
+
+<ul class="sidenav" id="mobile-demo">
+  <li><a routerLink="/seccion/5ef9772972c9c617a48295af">Colombia</a></li>
+  <li><a routerLink="/seccion/5f14fb4619fe6d370c5f62e1">Amazonas</a></li>
+  <li><a routerLink="/seccion/5f0670758ecdb3457ce01126">Centro América</a></li>
+  <li><a routerLink="/seccion/5ef9774472c9c617a48295b0">Europa</a></li>
+  <li><a routerLink="/contactanos">Contactenos</a></li>
+  <li *ngIf="adminLogged != 'true'"><a routerLink="/login">Login</a></li>
+  <li *ngIf="adminLogged == 'true'"><a routerLink="/logout">Cerrar Sesión</a></li>
+</ul>
+
+
+<ul id="slide-out" class="sidenav">
+  <li><div class="user-view">
+    <div class="background">
+      <img src="assets/cielo.jpg">
+    </div>
+    <a href="#user"><img class="circle" src="assets/Iloveadmin.jpg"></a>
+    <a href="#email"><span class="white-text email">{{adminMail}}</span></a>
+  </div></li>
+  <li><a href="/manage-usuarios"><i class="material-icons">face</i>Administración de Usuarios</a></li>
+  <li><a href="/manage-proyecto"><i class="material-icons">foundation</i>Administración de Proyectos</a></li>
+  <li><a href="/proyecto-register"><i class="material-icons">assignment</i>Creación de Proyectos</a></li>  
+  <li><a href="/seccion-register"><i class="material-icons">roofing</i>Registro de Secciones</a></li>
+  <li><a href="/register-admin"><i class="material-icons">account_box</i>Registro de Administrador</a></li>
+  <li><a href="/management-admin"><i class="material-icons">perm_identity</i>Administración de Admins</a></li>
+  <li><a href="/manage-secciones"><i class="material-icons">next_week</i>Administración de Secciones</a></li>
+  <li><a href="/manage-contactenos"><i class="material-icons">assistant_photo</i>Administración de Mensajes</a></li>
+  
+</ul>
+<div *ngIf="adminLogged == 'true'" class="zonaAdmin">
+  <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">build</i> Zona de Administrador</a>
+</div>

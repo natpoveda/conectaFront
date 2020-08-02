@@ -1,0 +1,47 @@
+<div *ngFor="let usuario of usuariosEncontrados" class="users container">
+    <form #actualizarUsuariosForm="ngForm">
+        <label>Nombre</label>
+        <input type="text" id="nombre"  required
+        #nombre="ngModel" name="nombre" [(ngModel)] ="usuario.nombre">
+        <br>
+        <label>Apelido</label>
+        <input type="text" id="apellido"  required
+        #apellido="ngModel" name="apellido" [(ngModel)] ="usuario.apellido">
+        <br>
+        <label>Género</label>
+        <input type="text" id="genero"  required
+        #genero="ngModel" name="genero" [(ngModel)] ="usuario.genero">
+        <br>
+        <label>Cédula</label>
+        <input type="text" id="cedula"  required
+        #cedula="ngModel" name="cedula" [(ngModel)] ="usuario.cedula">
+        <br>
+        <label>Edad</label>
+        <input type="text" id="edad"  required
+        #edad="ngModel" name="edad" [(ngModel)] ="usuario.edad">
+        <br>
+        <label>Dirección</label>
+        <input type="text" id="direccion"  required
+        #direccion="ngModel" name="direccion" [(ngModel)] ="usuario.direccion">
+        <br>
+        <label>E-mail</label>
+        <input type="text" id="email"  required
+        #email="ngModel" name="email" [(ngModel)] ="usuario.email">
+        <br>
+        <label>Tel</label>
+        <input type="text" id="tel" required
+        #tel="ngModel" name="tel" [(ngModel)] ="usuario.tel">
+        <br>
+        <label>País</label>
+        <input type="text" id="pais"  required
+        #pais="ngModel" name="pais" [(ngModel)] ="usuario.pais">       
+        <br>
+        <label>Proyecto Id</label>
+        <input type="text" id="pid"  required
+        #pid="ngModel" name="pid" [(ngModel)] ="usuario.pid">
+        <br>
+        <br>
+        <button (click)='editarUsuario(usuario)'  class="waves-effect waves-light btn"> Editar Usuario</button>
+        <button (click)='eliminarUsuario(usuario._id)'  class="waves-effect waves-light btn red"> Eliminar Usuario</button>
+    </form>
+</div>
